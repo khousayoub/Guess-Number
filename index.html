@@ -3,26 +3,38 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <form ng-submit="check(num)" ng-controller="guess">
-      <label for="num">Write your number :</label>
-      <input type="number" name="num" id="numtxt" ng-model="num" placeholder="Your number" enabled><br>
-      <label>{{ numLeft }} tries left !</label><br>
-      <label ng-model="msg">{{ msg }}</label>
-      <table>
-        <thead>
-          <tr>
-            <th>Number of try</th>
-            <th>Your Number</th>
-            <th>The message</th>
-          </tr>
-        </thead>
-        <tbody>
-        </tbody>
-      </table>
-      <button type="button" id="btnReset" style="display:none;" ng-click="reset()" name="restart">Try again !</button>
-    </form>
+    <div class="container">
+
+      <div class="row jumbotron">
+        <div class="col-lg-3">
+          <form ng-submit="check(num)" ng-controller="guess">
+          <label for="num">Write your number :</label>
+          <input class="form-control" type="number" name="num" id="numtxt" ng-model="num" placeholder="Your number" enabled><br>
+          <div id="info"><label>{{ numLeft }} tries left !</label><br>
+          <label ng-model="msg" id="msg">{{ msg }}</label></div>
+          <button type="button" id="btnReset" style="display:none;" ng-click="reset()" name="restart" class="btn btn-lg btn-bloc btn-success">Try again !</button>
+          </form>
+        </div>
+
+      <div class="col-lg-9">
+        <table class="table table-border">
+          <thead>
+            <tr class="info">
+              <th>Number of try</th>
+              <th>Your Number</th>
+              <th>The message</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+    </div>
+      </div>
+    </div>
     <script src="angular-1.6.1/angular.js"></script>
     <script src="app.js" charset="utf-8"></script>
   </body>
