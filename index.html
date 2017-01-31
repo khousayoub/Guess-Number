@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="guess-number">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form ng-submit="check(num)" ng-controller="guess">
+      <label for="num">Write your number :</label>
+      <input type="number" name="num" id="numtxt" ng-model="num" placeholder="Your number" enabled><br>
+      <label>{{ numLeft }} tries left !</label><br>
+      <label ng-model="msg">{{ msg }}</label>
+      <table>
+        <thead>
+          <tr>
+            <th>Number of try</th>
+            <th>Your Number</th>
+            <th>The message</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+      <button type="button" id="btnReset" style="display:none;" ng-click="reset()" name="restart">Try again !</button>
+    </form>
+    <script src="angular-1.6.1/angular.js"></script>
+    <script src="app.js" charset="utf-8"></script>
+  </body>
+</html>
